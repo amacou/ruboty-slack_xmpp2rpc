@@ -20,12 +20,14 @@ And then execute:
 ## ENV
 
 ```
-RUBOTY_NAME='ruboty'               #Bot name
-SLACK_PASSWORD='password.abcdefg'  #Account's XMPP password
-SLACK_ROOM='general,bot_test'      #Room name to join in at first
-SLACK_TEAM='teamname'              #Account's team name
-SLACK_USERNAME='username'          #Account's username
-SLACK_TOKEN='xoxp-abcdefg-abcdefg' #Account's OAuthToken
+RUBOTY_NAME='ruboty'                         #Bot name
+SLACK_PASSWORD='password.abcdefg'            #Account's XMPP password
+SLACK_ROOM='general,bot_test'                #Room name to join in at first
+SLACK_TEAM='teamname'                        #Account's team name
+SLACK_USERNAME='username'                    #Account's username
+SLACK_TOKEN='xoxp-abcdefg-abcdefg'           #Account's OAuthToken
+SLACK_ICON_URL='http://example.com/icon.png' #Image to use as Account's Icon
+SLACK_ICON_EMOJI=':yum:'                     #Emoji to use as Account's Icon
 ```
 
 ## Contributing
