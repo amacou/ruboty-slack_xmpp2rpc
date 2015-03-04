@@ -20,7 +20,8 @@ class Ruboty::Adapters::SlackXMPP2RPC < Ruboty::Adapters::Slack
     {
       text: message[:code] ? "```\n#{message[:body]}\n```" : message[:body],
       channel: '#' + message[:to].split('@').first,
-      username: robot.name
+      username: robot.name,
+      link_names: 1
     }.tap do |m|
       m[:icon_url] = icon_url if icon_url
       m[:icon_emoji] = emoji_icon if emoji_icon
