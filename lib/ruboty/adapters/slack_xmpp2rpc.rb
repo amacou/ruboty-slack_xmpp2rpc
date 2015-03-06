@@ -3,7 +3,7 @@ require 'ruboty/adapters/slack'
 
 class Ruboty::Adapters::SlackXMPP2RPC < Ruboty::Adapters::Slack
   include Mem
-  
+
   env :SLACK_TOKEN, "access token"
   env :SLACK_ICON_URL, "icon url for this message", optional: true
   env :SLACK_ICON_EMOJI, "emoji icon for this message", optional: true
@@ -28,11 +28,16 @@ class Ruboty::Adapters::SlackXMPP2RPC < Ruboty::Adapters::Slack
     end
   end
 
+  def on_message(message)
+    return if username_of(message) == robot.name
+    super
+  end
+
   def icon_url
     ENV['SLACK_ICON_URL']
   end
   memoize :icon_url
-  
+
   def emoji_icon
     ENV['SLACK_ICON_EMOJI']
   end
