@@ -29,7 +29,7 @@ class Ruboty::Adapters::SlackXMPP2RPC < Ruboty::Adapters::Slack
   end
 
   def on_message(message)
-    return if username_of(message) == robot.name
+    return if username_of(message).gsub('(bot)','') == robot.name
     super
   end
 
